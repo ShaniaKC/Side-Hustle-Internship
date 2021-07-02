@@ -19,20 +19,26 @@ session_start();
      <input type="email" name="email" id="">
      <input type="password" name="password" id="">
      <input type="password" name="confirm-password" id="">
-     <input type="submit" value="Sign Up">
+     <input type="submit" value="Sign Up" name="submit">
      </form>
      <div class="form-fit">  <p>Already have an account? <a href="login.php">Login</a></p></div>
  <?php
  if(isset($_POST["submit"])){
-     
     $_SESSION["name"] = $_POST["name"];
     $_SESSION["email"] = $_POST["email"];
     if($_POST["password"] === $_POST["confirm-password"]){
         $_SESSION["password"] = $_POST["password"];
-    }else {
+        echo "Welcome ".$_SESSION["name"];
+    }
+    else {
         echo "Your passwords don't match";
     }
  }
+?>
+<?php
+
+   
+
 ?>
 </body>
 </html>

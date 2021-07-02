@@ -17,18 +17,16 @@ session_start();
 <form id="log_form" action="login.php" method="POST">
      <input type="email" name="email" id="">
      <input type="password" name="password" id="">
-     <input type="submit" value="Log in">
+     <input type="submit" value="Log in" name="submit">
      </form>
      <div class="form-fit">  <p>Don't have an account? <a href="register.php">Sign Up</a></p></div>
      
     <?php
     
   if(isset($_POST["submit"])) {
-    if ($_SESSION["email"] === $email && $_SESSION["password"] === $password) {
-       echo "logged in!";
-    }else {
-        echo "failed";
-    }
+    if( $_SESSION["email"] === $_POST["email"] &&  $_SESSION["password"] = $_POST["password"]){
+      echo "Logged in successfully";
+     }
   }
     ?>
 
