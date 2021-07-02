@@ -14,7 +14,7 @@ session_start();
 </head>
 <body>
    
-     <form id="sign_form" action="register.php" method="POST">
+<form id="sign_form"  method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
      <input type="text" placeholder="Miracle Sam" name="name">
      <input type="email" name="email" id="">
      <input type="password" name="password" id="">
@@ -24,10 +24,10 @@ session_start();
      <div class="form-fit">  <p>Already have an account? <a href="login.php">Login</a></p></div>
  <?php
  if(isset($_POST["submit"])){
-    $_SESSION["name"] = $_POST["name"];
-    $_SESSION["email"] = $_POST["email"];
+    $_SESSION["name"] = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+    $_SESSION["email"] = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
     if($_POST["password"] === $_POST["confirm-password"]){
-        $_SESSION["password"] = $_POST["password"];
+        $_SESSION["password"] = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
         echo "Welcome ".$_SESSION["name"];
     }
     else {

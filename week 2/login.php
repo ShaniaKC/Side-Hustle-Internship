@@ -14,7 +14,7 @@ session_start();
 </head>
 <body>
      
-<form id="log_form" action="login.php" method="POST">
+<form id="log_form"  method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
      <input type="email" name="email" id="">
      <input type="password" name="password" id="">
      <input type="submit" value="Log in" name="submit">
