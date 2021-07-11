@@ -1,0 +1,63 @@
+*,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: left;
+    font-family: serif;
+    font-size: 18px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2vh;
+}
+
+#wrapper {
+    margin: 10vh auto;
+    width: 600px;
+    min-height: 400px;
+    background-color: aliceblue;
+    padding: 30px;
+}
+
+.inner {
+    display: inline-block;
+}
+
+input[name="delete"],
+input[name="add"] {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: inherit;
+}
+
+input[name="delete"] {
+    background-color: tomato;
+}
+
+input[name="add"] {
+    background-color: teal;
+}
+
+.item,
+#add-form {
+    padding: .5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#add-form {
+    padding-bottom: 20px;
+}
+
+#add-field {
+    background-color: navy;
+    color: white;
+    width: 60%;
+    height: 40px;
+}
